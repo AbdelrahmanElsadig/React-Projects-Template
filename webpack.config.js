@@ -1,8 +1,10 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+
+
+const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-    entry: {
+	entry: {
 		index: path.resolve(__dirname, "src/index.tsx"),
 	},
 	devtool: false,
@@ -29,10 +31,6 @@ module.exports = {
 				test: /\.html$/,
 				use: "html-loader",
 			},
-			{
-				test: /\.(png|svg|jpg|jpeg|gif)$/i,
-				type: "asset/resource",
-			},
 		],
 	},
 	output: {
@@ -40,7 +38,6 @@ module.exports = {
 		path: path.resolve(__dirname, "dist"),
 		clean: true,
 	},
-	watch: true,
 	watchOptions: {
 		ignored: /node_modules/,
 	},
@@ -50,5 +47,5 @@ module.exports = {
 		port: 9000,
 		hot: true,
 		liveReload: false,
-	}
-}
+	},
+};
